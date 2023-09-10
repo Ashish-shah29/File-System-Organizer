@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About Page</title>
+    <!-- Add the Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand m-3" href="/">
+        <img
+          src="https://tse1.mm.bing.net/th?id=OIP.jCJ_0S8ftFdUYIC3z1F6JwAAAA&pid=ImgDet&rs=1"
+          alt="Logo"
+          height="30"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <h1>About Our File System</h1>
+      <div class="accordion" id="fileSystemAccordion">
+        <!-- Folder Structure Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="folderStructureHeading">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#folderStructureCollapse"
+              aria-expanded="true"
+              aria-controls="folderStructureCollapse"
+            >
+              Folder Structure
+            </button>
+          </h2>
+          <div
+            id="folderStructureCollapse"
+            class="accordion-collapse collapse show"
+            aria-labelledby="folderStructureHeading"
+            data-bs-parent="#fileSystemAccordion"
+          >
+            <div class="accordion-body">
+              <p>Our file system is organized as follows:</p>
+              <ul>
+                <li>Documents</li>
+                <li>Images</li>
+                <li>Music</li>
+                <li>Videos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- File Types Section -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="fileTypesHeading">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#fileTypesCollapse"
+              aria-expanded="false"
+              aria-controls="fileTypesCollapse"
+            >
+              File Types
+            </button>
+          </h2>
+          <div
+            id="fileTypesCollapse"
+            class="accordion-collapse collapse"
+            aria-labelledby="fileTypesHeading"
+            data-bs-parent="#fileSystemAccordion"
+          >
+            <div class="accordion-body">
+              <p>We support various file types, including:</p>
+              <ul>
+                <li>PDF</li>
+                <li>JPEG</li>
+                <li>MP3</li>
+                <li>MP4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add the Bootstrap JS and animations -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Animation for accordion collapse
+      const accordionItems = document.querySelectorAll(".accordion-item");
+
+      accordionItems.forEach((item) => {
+        item.addEventListener("shown.bs.collapse", () => {
+          item.querySelector(".accordion-button").classList.add("active");
+        });
+
+        item.addEventListener("hidden.bs.collapse", () => {
+          item.querySelector(".accordion-button").classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
